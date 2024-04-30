@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input,textarea,button,select,a{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:focus,a:visited,a:active{
+    outline: none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: #212121; */
+    background: linear-gradient(90deg,#212121,blue,rgb(184, 235, 255),blue,#212121);
+    background-size: 200% 200%;
+    animation: gradientAnimation 4s ease-in-out infinite;
+
+    
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.container{
+    position: relative;
+}
+
+.clock{
+    width: 60vmin;
+    height: 60vmin;
+    border-radius: 50%;
+    /* background-color:  rgba(255, 255, 255, 0.15); */
+    background: linear-gradient(200deg,darkblue,blue,skyblue,blue,darkblue);
+    /* border: 2px solid rgba(255, 255, 255, 0.25); */
+    border: 2px solid rgb(0, 0, 76);
+    box-shadow: 0px 0px 30px  rgba(0, 0, 0, 1.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: gradientAnimation 4s ease-in infinite;
+    background-size: 320% 8%;
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b{
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+    font-size: 5vmin;
+}
+
+.clock::before{
+    content: "";
+    background-color: white;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 20;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i{
+    position: absolute;
+    background-color: var(--color);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
