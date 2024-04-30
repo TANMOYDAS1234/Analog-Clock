@@ -21,9 +21,10 @@ body{
     align-items: center;
     min-height: 100vh;
     /* background-color: #212121; */
-    background: linear-gradient(90deg,#212121,blue,rgb(184, 235, 255),blue,#212121);
+    /* background: linear-gradient(90deg,#212121,blue,rgb(184, 235, 255),blue,#212121); */
+    background: linear-gradient(120deg, darkblue 10%, blue 30%, skyblue 50%, blue 70%, darkblue 90%);
     background-size: 200% 200%;
-    animation: gradientAnimation 4s ease-in-out infinite;
+    animation: gradientAnimation 4s ease-in infinite;
 
     
     user-select: none;
@@ -49,7 +50,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: gradientAnimation 4s ease-in infinite;
+    animation: gradientAnimation 4s ease-in-out infinite;
     background-size: 320% 8%;
 }
 
